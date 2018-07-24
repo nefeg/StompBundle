@@ -1,0 +1,10 @@
+parameters:
+    # failover://(tcp://localhost:61614,ssl://localhost:61612)
+    # order://(tcp://localhost:61614,ssl://localhost:61612)?randomize=true
+    stomp_login: guest
+    stomp_passcode: guest
+    stomp_host: 'tcp://localhost:61613'
+    stomp_vhost: '/'
+    stomp_versions:
+        - '1.0'
+        - '1.1'
