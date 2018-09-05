@@ -9,127 +9,133 @@
 </head>
 <body>
 
-    <form onchange="calcAddress()">
-        <label>Host:
-            <input id="stomp_host" type="text" size="50" placeholder="">
-        </label><br>
-        <label>Port:
-            <input id="stomp_port" type="text" size="5" placeholder="15674">
-        </label><br>
-        <label>Path:
+<form onchange="calcAddress()">
+    <label>Host:
+        <input id="stomp_host" type="text" size="50" placeholder="">
+    </label><br>
+    <label>Port:
+        <input id="stomp_port" type="text" size="5" placeholder="15674">
+    </label><br>
+    <label>Path:
         <select name="path-select" id="path-select" onchange="pathChange()">
             <option value="/stomp/websocket">RabbitMQ v3.5.*</option>
             <option value="/ws">RabbitMQ v3.7.*</option>
             <option value="">custom</option>
         </select>
-        </label>
-        <input id="socket_path" type="text" size="50" placeholder="" readonly>
-        <br>
-        <label>Connection address: <input id="connection_address" readonly size="150"></label>
-        <hr>
-    </form>
+    </label>
+    <input id="socket_path" type="text" size="50" placeholder="" readonly>
+    <br>
+    <label>Connection address: <input id="connection_address" readonly size="150"></label>
+    <br>
+    <label>Use SSL: <input id="connection_ssl" type="checkbox"></label>
+    <br>
+    <label>login: <input id="connection_login" type="text" value="guest"></label>
+    <label>passcode: <input id="connection_passcode" type="text" value="guest"></label>
+    <br>
+    <hr>
+</form>
 
 
 
-    <form onsubmit="listen($('#listen_key').val()); return false;">
-        <input name="listen_key" id="listen_key" type="text">
-        <input type="submit" value="subscribe">
-    </form>
+<form onsubmit="listen($('#listen_key').val()); return false;">
+    <input name="listen_key" id="listen_key" type="text">
+    <input type="submit" value="subscribe">
+</form>
 
 
 
 
-    <div id="log"></div>
+<div id="log"></div>
 
-    <script>
+<script>
 
-        $().ready(function(){
+    $().ready(function(){
 
-            var currentUrl = window.location.href;
-            if (currentUrl.substr(-1) != '/'){
-                window.location.replace(currentUrl + '/');
-            }
-
-            $('#stomp_host').attr('placeholder', window.location.hostname);
-            pathChange();
-            calcAddress();
-        });
-
-        function pathChange(){
-
-            var select = $('#path-select');
-            var path = $('#socket_path');
-
-            if (select && select.val() != ""){
-                path.attr('readonly', true);
-                path.val(select.val());
-
-            }else{
-                path.attr('readonly', false);
-                path.val('');
-            }
+        var currentUrl = window.location.href;
+        if (currentUrl.substr(-1) != '/'){
+            window.location.replace(currentUrl + '/');
         }
 
-        function calcAddress(){
+        $('#stomp_host').attr('placeholder', window.location.hostname);
+        pathChange();
+        calcAddress();
+    });
 
-            var $stomp_host = $('#stomp_host').val();
-            if (!$stomp_host || $stomp_host == ''){
-                $stomp_host = window.location.hostname;
-            }
+    function pathChange(){
 
-            var $stomp_port = $('#stomp_port').val();
-            if (!$stomp_port || isNaN($stomp_port)){
-                $stomp_port = 15674;
-            }
+        var select = $('#path-select');
+        var path = $('#socket_path');
 
-            var $stomp_path = $('#socket_path').val();
+        if (select && select.val() != ""){
+            path.attr('readonly', true);
+            path.val(select.val());
 
+        }else{
+            path.attr('readonly', false);
+            path.val('');
+        }
+    }
 
-            $('#connection_address').val('ws://'+ $stomp_host +':'+ $stomp_port + $stomp_path)
+    function calcAddress(){
+
+        var $stomp_host = $('#stomp_host').val();
+        if (!$stomp_host || $stomp_host == ''){
+            $stomp_host = window.location.hostname;
         }
 
-
-        var logEl = document.getElementById('log');
-        var logCounter = 1;
-        function log(msg){
-
-            var msgType = msg.headers['x-app-event'];
-
-            logEl.innerHTML = '[' + logCounter + '] (<b>'+msgType+'</b>) -->>>' +  msg + "<br><br>" + logEl.innerHTML;
-            console.log( $.parseJSON(msg.body));
-            logCounter++;
+        var $stomp_port = $('#stomp_port').val();
+        if (!$stomp_port || isNaN($stomp_port)){
+            $stomp_port = 15674;
         }
 
-        function listen($key){
+        var $stomp_path = $('#socket_path').val();
+        var $schema = $('#connection_ssl').prop('checked') ? "wss" : "ws";
 
-            var $address = $('#connection_address').val();
-            console.log($address);
+        $('#connection_address').val($schema +'://'+ $stomp_host +':'+ $stomp_port + $stomp_path)
+    }
 
-            try{
-                var ws = new WebSocket($address); //work
-                var Client = Stomp.over(ws);
-                Client.heartbeat.outgoing = 20000; // client will send heartbeats every 20000ms
-                Client.heartbeat.incoming = 0;
 
-                Client.connect({login: 'guest',  passcode: 'guest'}, function() {
+    var logEl = document.getElementById('log');
+    var logCounter = 1;
+    function log(msg){
 
-                    logEl.innerHTML = "";
+        var msgType = msg.headers['x-app-event'];
 
-                    Client.subscribe(
-                        "/exchange/amq.direct/" + $key,
-                        (function(message) {
-                            log(message);
-                        }),
-                        {}
-                    );
-                });
+        logEl.innerHTML = '[' + logCounter + '] (<b>'+msgType+'</b>) -->>>' +  msg + "<br><br>" + logEl.innerHTML;
+        console.log( $.parseJSON(msg.body));
+        logCounter++;
+    }
 
-            }catch (err){
-                console.log(err);
-            }
+    function listen($key){
 
+        var $address = $('#connection_address').val();
+        console.log($address);
+
+        try{
+            var ws = new WebSocket($address); //work
+            var Client = Stomp.over(ws);
+            Client.heartbeat.outgoing = 20000; // client will send heartbeats every 20000ms
+            Client.heartbeat.incoming = 0;
+
+            Client.connect({login: $('#connection_login').val(),  passcode: $('#connection_passcode').val()}, function() {
+
+                logEl.innerHTML = "";
+
+                Client.subscribe(
+                    "/exchange/amq.direct/" + $key,
+                    (function(message) {
+                        log(message);
+                    }),
+                    {}
+                );
+            });
+
+        }catch (err){
+            console.log(err);
         }
 
-    </script>
+    }
+
+</script>
 </body>
 </html>

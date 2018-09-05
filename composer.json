@@ -4,7 +4,7 @@
   "keywords": ["stomp", "message"],
   "type": "symfony-bundle",
   "license": "MIT",
-  "version": "0.1-dev",
+  "version": "1.0",
   "authors": [
     { "name": "Evgeny Nefedkin",
       "email": "evgeny.nefedkin@umbrellait.com"
@@ -14,7 +14,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/umbrella-evgeny-nefedkin/AFCTokenBundle.git"
+      "url": "https://github.com/umbrella-evgeny-nefedkin/StompBundle.git"
     }
   ],
 
