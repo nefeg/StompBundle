@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 25.04.17
- * Time: 19:28
- */
 
-namespace Umbrella\StompBundle;
+namespace StompBundle;
 
 /**
  * Interface MessageCacheInterface
  *
- * @package Umbrella\StompBundle
+ * @package StompBundle
  */
 interface MessageCacheInterface
 {

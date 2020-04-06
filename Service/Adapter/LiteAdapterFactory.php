@@ -1,21 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 07.06.2018
- * Time: 17:46
- */
 
-namespace Umbrella\StompBundle\Service\Adapter;
+
+namespace StompBundle\Service\Adapter;
 
 use Stomp\Exception\StompException;
-use Umbrella\StompBundle\Service\AdapterInterface;
-use Umbrella\StompBundle\Service\ServiceException;
+use StompBundle\Service\AdapterInterface;
+use StompBundle\Service\ServiceException;
 
 /**
  * Class LiteAdapterFactory
  *
- * @package Umbrella\StompBundle\Service\Adapter
+ * @package StompBundle\Service\Adapter
  */
 class LiteAdapterFactory
 {
@@ -25,8 +20,8 @@ class LiteAdapterFactory
 	 * @param string $password
 	 * @param array  $versions
 	 * @param string $vhost
-	 * @return \Umbrella\StompBundle\Service\AdapterInterface
-	 * @throws \Umbrella\StompBundle\Service\ServiceException
+	 * @return AdapterInterface
+	 * @throws ServiceException
 	 */
 	static public function factory(
 		string  $host,

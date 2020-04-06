@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 08.06.2018
- * Time: 0:46
- */
 
-namespace Umbrella\StompBundle\Service;
+namespace StompBundle\Service;
 
 use Psr\Log\LoggerInterface;
 
 /**
  * Class LoggerStub
  *
- * @package Umbrella\StompBundle\Service
+ * @package StompBundle\Service
  */
 class LoggerStub implements LoggerInterface
 {

@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 04.05.16
- * Time: 10:04
- */
 
-namespace Umbrella\StompBundle\ExchangePoint;
+namespace StompBundle\ExchangePoint;
 
-use Umbrella\StompBundle\ExchangePointInterface;
+use StompBundle\ExchangePointInterface;
 
 /**
  * Class PublicBroadcastPoint
  *
- * @package Umbrella\StompBundle\ExchangePoints
+ * @package StompBundle\ExchangePoints
  */
 abstract class PublicBroadcastPoint implements ExchangePointInterface
 {

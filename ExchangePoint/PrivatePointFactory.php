@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 08.06.2018
- * Time: 1:25
- */
 
-namespace Umbrella\StompBundle\ExchangePoint;
+namespace StompBundle\ExchangePoint;
 
 /**
  * Class PrivatePointFactory
  *
- * @package Umbrella\StompBundle\ExchangePoint
+ * @package StompBundle\ExchangePoint
  */
 class PrivatePointFactory
 {

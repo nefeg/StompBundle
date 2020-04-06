@@ -1,13 +1,13 @@
 <?php
 
-namespace Umbrella\StompBundle;
+namespace StompBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * Class StompBundle
  *
- * @package Umbrella\StompBundle
+ * @package StompBundle
  */
 class StompBundle extends Bundle
 {

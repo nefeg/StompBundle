@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 28.03.16
- * Time: 20:03
- */
 
-namespace Umbrella\StompBundle\Service;
+namespace StompBundle\Service;
 
-use Umbrella\StompBundle\ExchangePointInterface;
-use Umbrella\StompBundle\MessageCacheInterface;
-use Umbrella\StompBundle\MessageInterface;
-use Umbrella\StompBundle\ServiceInterface;
+use StompBundle\ExchangePointInterface;
+use StompBundle\MessageCacheInterface;
+use StompBundle\MessageInterface;
+use StompBundle\ServiceInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class Service
  *
- * @package Umbrella\StompBundle
+ * @package StompBundle
  */
 class Service implements ServiceInterface
 {
@@ -26,7 +20,7 @@ class Service implements ServiceInterface
 	private static $cache = [];
 
 	/**
-	 * @var \Umbrella\StompBundle\Service\AdapterInterface
+	 * @var \StompBundle\Service\AdapterInterface
 	 */
 	private $Adapter;
 	/**
@@ -37,7 +31,7 @@ class Service implements ServiceInterface
 	/**
 	 * Service constructor.
 	 *
-	 * @param \Umbrella\StompBundle\Service\AdapterInterface $Adapter
+	 * @param \StompBundle\Service\AdapterInterface $Adapter
 	 * @param \Psr\Log\LoggerInterface|null             $Logger
 	 */
 	public function __construct(AdapterInterface $Adapter, LoggerInterface $Logger = null){
@@ -47,7 +41,7 @@ class Service implements ServiceInterface
 	}
 
 	/**
-	 * @return \Umbrella\StompBundle\Service\AdapterInterface
+	 * @return AdapterInterface
 	 */
 	protected function getAdapter() :AdapterInterface{
 		return $this->Adapter;
@@ -98,8 +92,8 @@ class Service implements ServiceInterface
 
 
 	/**
-	 * @param \Umbrella\StompBundle\ExchangePointInterface $exchangePoint
-	 * @param \Umbrella\StompBundle\MessageInterface       $StompMessage
+	 * @param \StompBundle\ExchangePointInterface $exchangePoint
+	 * @param MessageInterface       $StompMessage
 	 * @param bool                                    $sync
 	 * @param bool                                    $cache
 	 * @return bool

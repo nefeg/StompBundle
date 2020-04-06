@@ -1,18 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 31.03.16
- * Time: 21:28
- */
 
-namespace Umbrella\StompBundle;
+namespace StompBundle;
 
 
 /**
  * Interface ServiceInterface
  *
- * @package Umbrella\StompBundle
+ * @package StompBundle
  */
 interface ServiceInterface
 {
@@ -27,8 +21,8 @@ interface ServiceInterface
 
 
 	/**
-	 * @param \Umbrella\StompBundle\ExchangePointInterface $exchangePoint
-	 * @param \Umbrella\StompBundle\MessageInterface       $StompMessage
+	 * @param \StompBundle\ExchangePointInterface $exchangePoint
+	 * @param \StompBundle\MessageInterface       $StompMessage
 	 * @param bool                                    $sync
 	 * @param bool                                    $cache
 	 * @return bool

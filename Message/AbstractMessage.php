@@ -1,20 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 20.05.16
- * Time: 19:01
- */
 
-namespace Umbrella\StompBundle\Message;
+namespace StompBundle\Message;
 
-use Umbrella\StompBundle\MessageCacheInterface;
-use Umbrella\StompBundle\MessageInterface;
+use StompBundle\MessageCacheInterface;
+use StompBundle\MessageInterface;
 
 /**
  * Class AbstractMessage
  *
- * @package Umbrella\StompBundle
+ * @package StompBundle
  */
 abstract class AbstractMessage implements MessageInterface, MessageCacheInterface
 {
@@ -52,7 +46,7 @@ abstract class AbstractMessage implements MessageInterface, MessageCacheInterfac
 
 	/**
 	 * @param string $message
-	 * @return \Umbrella\StompBundle\MessageInterface
+	 * @return MessageInterface
 	 */
 	public function setStompMessage(string $message) :MessageInterface{
 		$this->message = $message;
@@ -73,8 +67,8 @@ abstract class AbstractMessage implements MessageInterface, MessageCacheInterfac
 	 * @param        $headerValue
 	 * @param bool   $override
 	 * @param string $preffix
-	 * @return \Umbrella\StompBundle\MessageInterface
-	 * @throws \Umbrella\StompBundle\Message\MessageException
+	 * @return MessageInterface
+	 * @throws MessageException
 	 */
 	public function addStompHeader($headerKey, $headerValue, $override = false, $preffix = MessageInterface::HEADER_PREFIX) :MessageInterface{
 
@@ -100,7 +94,7 @@ abstract class AbstractMessage implements MessageInterface, MessageCacheInterfac
 
 	/**
 	 * @param array $headers
-	 * @return \Umbrella\StompBundle\MessageInterface
+	 * @return MessageInterface
 	 */
 	public function setStompHeaders(array $headers) :MessageInterface{
 		$this->headers = $headers;

@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 29.03.16
- * Time: 20:15
- */
 
-namespace Umbrella\StompBundle;
+namespace StompBundle;
 
 /**
  * Interface ExchangePointInterface
  *
- * @package Umbrella\StompBundle\ExchangePoints
+ * @package StompBundle\ExchangePoints
  */
 interface ExchangePointInterface
 {

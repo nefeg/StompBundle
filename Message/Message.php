@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 29.03.16
- * Time: 21:46
- */
 
-namespace Umbrella\StompBundle\Message;
+namespace StompBundle\Message;
 
 /**
  * Class Message
  *
- * @package Umbrella\StompBundle\Message
+ * @package StompBundle\Message
  */
 class Message extends AbstractMessage
 {

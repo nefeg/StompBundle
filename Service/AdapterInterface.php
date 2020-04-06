@@ -1,18 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 07.06.2018
- * Time: 17:00
- */
 
-namespace Umbrella\StompBundle\Service;
+namespace StompBundle\Service;
 
 
 /**
  * Interface AdapterInterface
  *
- * @package Umbrella\StompBundle\Service
+ * @package StompBundle\Service
  */
 interface AdapterInterface
 {

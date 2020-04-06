@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: omni
- * Date: 29.03.16
- * Time: 23:15
- */
 
-namespace Umbrella\StompBundle\ExchangePoint;
+namespace StompBundle\ExchangePoint;
 
-use Umbrella\StompBundle\ExchangePointInterface;
+use StompBundle\ExchangePointInterface;
 
 /**
  * Class PrivateDirectPoint
  *
- * @package Umbrella\StompBundle\ExchangePoint
+ * @package StompBundle\ExchangePoint
  */
 abstract class PrivateDirectPoint implements ExchangePointInterface
 {
