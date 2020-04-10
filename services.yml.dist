@@ -6,13 +6,13 @@ services:
 
 
     app.stomp.service:
-        class: Umbrella\StompBundle\Service\Service
+        class: Aimchat\StompBundle\Service\Service
         arguments: ['@stomp_bundle.service.adapter.lite', '@logger']
 
 
     stomp_bundle.service.adapter.lite:
-        class: Umbrella\StompBundle\Service\Adapter\LiteAdapter
-        factory: [Umbrella\StompBundle\Service\Adapter\LiteAdapterFactory, factory]
+        class: Aimchat\StompBundle\Service\Adapter\LiteAdapter
+        factory: [Aimchat\StompBundle\Service\Adapter\LiteAdapterFactory, factory]
         arguments:
             $host: '%stomp_host%'
             $login: '%stomp_login%'

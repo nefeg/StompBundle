@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle;
+namespace Aimchat\StompBundle;
 
 /**
  * Interface MessageCacheInterface
  *
- * @package StompBundle
+ * @package Aimchat\StompBundle
  */
 interface MessageCacheInterface
 {

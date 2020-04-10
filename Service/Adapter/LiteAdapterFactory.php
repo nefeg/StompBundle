@@ -1,16 +1,16 @@
 <?php
 
 
-namespace StompBundle\Service\Adapter;
+namespace Aimchat\StompBundle\Service\Adapter;
 
+use Aimchat\StompBundle\Service\AdapterInterface;
+use Aimchat\StompBundle\Service\ServiceException;
 use Stomp\Exception\StompException;
-use StompBundle\Service\AdapterInterface;
-use StompBundle\Service\ServiceException;
 
 /**
  * Class LiteAdapterFactory
  *
- * @package StompBundle\Service\Adapter
+ * @package Aimchat\StompBundle\Service\Adapter
  */
 class LiteAdapterFactory
 {

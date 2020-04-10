@@ -1,13 +1,13 @@
 <?php
 
-namespace StompBundle\Service;
+namespace Aimchat\StompBundle\Service;
 
 use Psr\Log\LoggerInterface;
 
 /**
  * Class LoggerStub
  *
- * @package StompBundle\Service
+ * @package Aimchat\StompBundle\Service
  */
 class LoggerStub implements LoggerInterface
 {

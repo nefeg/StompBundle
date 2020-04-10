@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle\Message;
+namespace Aimchat\StompBundle\Message;
 
 /**
  * Class Message
  *
- * @package StompBundle\Message
+ * @package Aimchat\StompBundle\Message
  */
 class Message extends AbstractMessage
 {

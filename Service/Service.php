@@ -1,17 +1,17 @@
 <?php
 
-namespace StompBundle\Service;
+namespace Aimchat\StompBundle\Service;
 
-use StompBundle\ExchangePointInterface;
-use StompBundle\MessageCacheInterface;
-use StompBundle\MessageInterface;
-use StompBundle\ServiceInterface;
+use Aimchat\StompBundle\ExchangePointInterface;
+use Aimchat\StompBundle\MessageCacheInterface;
+use Aimchat\StompBundle\MessageInterface;
+use Aimchat\StompBundle\ServiceInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class Service
  *
- * @package StompBundle
+ * @package Aimchat\StompBundle
  */
 class Service implements ServiceInterface
 {
@@ -20,7 +20,7 @@ class Service implements ServiceInterface
 	private static $cache = [];
 
 	/**
-	 * @var \StompBundle\Service\AdapterInterface
+	 * @var \Aimchat\StompBundle\Service\AdapterInterface
 	 */
 	private $Adapter;
 	/**
@@ -31,7 +31,7 @@ class Service implements ServiceInterface
 	/**
 	 * Service constructor.
 	 *
-	 * @param \StompBundle\Service\AdapterInterface $Adapter
+	 * @param \Aimchat\StompBundle\Service\AdapterInterface $Adapter
 	 * @param \Psr\Log\LoggerInterface|null             $Logger
 	 */
 	public function __construct(AdapterInterface $Adapter, LoggerInterface $Logger = null){
@@ -92,7 +92,7 @@ class Service implements ServiceInterface
 
 
 	/**
-	 * @param \StompBundle\ExchangePointInterface $exchangePoint
+	 * @param \Aimchat\StompBundle\ExchangePointInterface $exchangePoint
 	 * @param MessageInterface       $StompMessage
 	 * @param bool                                    $sync
 	 * @param bool                                    $cache

@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle;
+namespace Aimchat\StompBundle;
 
 /**
  * Interface ExchangePointInterface
  *
- * @package StompBundle\ExchangePoints
+ * @package Aimchat\StompBundle\ExchangePoints
  */
 interface ExchangePointInterface
 {

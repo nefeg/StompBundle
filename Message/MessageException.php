@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle\Message;
+namespace Aimchat\StompBundle\Message;
 
 /**
  * Class MessageException
  *
- * @package StompBundle\Message
+ * @package Aimchat\StompBundle\Message
  */
 class MessageException extends \Exception
 {

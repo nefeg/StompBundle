@@ -1,12 +1,12 @@
 <?php
 
-namespace StompBundle\Service;
+namespace Aimchat\StompBundle\Service;
 
 
 /**
  * Interface AdapterInterface
  *
- * @package StompBundle\Service
+ * @package Aimchat\StompBundle\Service
  */
 interface AdapterInterface
 {

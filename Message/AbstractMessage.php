@@ -1,14 +1,14 @@
 <?php
 
-namespace StompBundle\Message;
+namespace Aimchat\StompBundle\Message;
 
-use StompBundle\MessageCacheInterface;
-use StompBundle\MessageInterface;
+use Aimchat\StompBundle\MessageCacheInterface;
+use Aimchat\StompBundle\MessageInterface;
 
 /**
  * Class AbstractMessage
  *
- * @package StompBundle
+ * @package Aimchat\StompBundle
  */
 abstract class AbstractMessage implements MessageInterface, MessageCacheInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace StompBundle\ExchangePoint;
+namespace Aimchat\StompBundle\ExchangePoint;
 
-use StompBundle\ExchangePointInterface;
+use Aimchat\StompBundle\ExchangePointInterface;
 
 /**
  * Class PublicBroadcastPoint
  *
- * @package StompBundle\ExchangePoints
+ * @package Aimchat\StompBundle\ExchangePoints
  */
 abstract class PublicBroadcastPoint implements ExchangePointInterface
 {

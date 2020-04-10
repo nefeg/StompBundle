@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle\ExchangePoint;
+namespace Aimchat\StompBundle\ExchangePoint;
 
 /**
  * Class PrivatePointFactory
  *
- * @package StompBundle\ExchangePoint
+ * @package Aimchat\StompBundle\ExchangePoint
  */
 class PrivatePointFactory
 {

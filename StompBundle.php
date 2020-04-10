@@ -1,13 +1,13 @@
 <?php
 
-namespace StompBundle;
+namespace Aimchat\StompBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * Class StompBundle
  *
- * @package StompBundle
+ * @package Aimchat\StompBundle
  */
 class StompBundle extends Bundle
 {

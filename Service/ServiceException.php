@@ -1,11 +1,11 @@
 <?php
 
-namespace StompBundle\Service;
+namespace Aimchat\StompBundle\Service;
 
 /**
  * Class ServiceException
  *
- * @package StompBundle\Service
+ * @package Aimchat\StompBundle\Service
  */
 class ServiceException extends \Exception
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace StompBundle;
+namespace Aimchat\StompBundle;
 
 
 /**
  * Interface ServiceInterface
  *
- * @package StompBundle
+ * @package Aimchat\StompBundle
  */
 interface ServiceInterface
 {
@@ -21,8 +21,8 @@ interface ServiceInterface
 
 
 	/**
-	 * @param \StompBundle\ExchangePointInterface $exchangePoint
-	 * @param \StompBundle\MessageInterface       $StompMessage
+	 * @param \Aimchat\StompBundle\ExchangePointInterface $exchangePoint
+	 * @param \Aimchat\StompBundle\MessageInterface       $StompMessage
 	 * @param bool                                    $sync
 	 * @param bool                                    $cache
 	 * @return bool
